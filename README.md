@@ -26,7 +26,7 @@ HTA-NRM addresses this challenge by asking:
 ## Method Overview
 
 <p align="center">
-  <img src="pip" width="800">
+  <img src="pip.png" width="800">
 </p>
 
 HTA-NRM explicitly maps neural activity into a hierarchy of latent spaces corresponding to different semantic abstraction levels.
