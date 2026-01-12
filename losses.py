@@ -1,15 +1,22 @@
 """
 Loss functions for hierarchical brain–semantic alignment.
 
-This file contains:
-- Safe Sinkhorn (OT) loss with numerical guards
-- WIC_Loss: Wasserstein-Infused Contrastive loss
+This file provides a reference implementation of the loss components
+used in HTA-NRM, including:
+- Safe Sinkhorn (optimal transport) loss
+- Wasserstein-Infused Contrastive (WIC) loss
 - Mutual information estimator (InfoNCE)
 
 Note:
-Exact numerical reproducibility is not guaranteed due to stochastic components
-(e.g., Sinkhorn stabilization, hard negative sampling).
+This implementation is released for research and review purposes.
+Due to stochastic components (e.g., Sinkhorn stabilization, hard-negative
+sampling, and numerical safeguards), exact numerical reproducibility is
+not guaranteed at this stage.
+
+A fully reproducible and ablation-complete version will be released
+upon paper acceptance.
 """
+
 
 from __future__ import annotations
 
