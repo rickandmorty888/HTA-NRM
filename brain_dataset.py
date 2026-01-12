@@ -10,6 +10,19 @@ from utils.sanitize import check_and_replace_inf
 from utils.hdf5_utils import first_existing_path, lazy_h5_open
 
 
+def check_and_replace_inf(arr, identifier, max_value=1e5):
+    # Convert max_value to the same type and device as the input tensor
+    if isinstance(arr, torch.Tensor):
+        max_value = torch.tensor(max_value, dtype=arr.dtype, device=arr.device)
+
+    # Identify indices where values are infinite
+    inf_indices = torch.isinf(arr)
+
+    # Replace infinite values with max_value
+    arr[inf_indices] = max_value
+
+    return arr
+
 class BrainDataset(Dataset):
     """
     Natural Scenes Dataset (NSD) loader with multimodal supervision.
